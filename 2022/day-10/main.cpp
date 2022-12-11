@@ -48,7 +48,6 @@ int main()
     int cycle = 0;
     int x = 1;
     int signalStrength = 0;
-    bool first = true;
     int v = 0;
 
     while ( getline (myfile,line) ) {
@@ -62,7 +61,7 @@ int main()
         cycle++;
         addSignalStrength(signalStrength,cycle,x);
         int currentPixel = (cycle-1) % 40;
-        if (x-1 <= currentPixel && x+1 >= currentPixel) {cout << "#";} else {cout << ".";}
+        if (x-1 <= currentPixel && x+1 >= currentPixel) {cout << "#";} else {cout << " ";}
         if (cycle % 40 == 0) { cout << endl;}
 
         // Afer cycle
@@ -71,7 +70,7 @@ int main()
                 cycle++;
                 addSignalStrength(signalStrength,cycle,x);
                 int currentPixel = (cycle-1) % 40;
-                if (x-1 <= currentPixel && x+1 >= currentPixel) {cout << "#";} else {cout << ".";}
+                if (x-1 <= currentPixel && x+1 >= currentPixel) {cout << "#";} else {cout << " ";}
                 if (cycle % 40 == 0) { cout << endl;}
                 x += v;
             }
